@@ -1,0 +1,59 @@
+
+<html>  
+<head>  
+    <title>PHP Login System</title>  
+    <!-- Insert style.css file inside index.html -->  
+    <link rel="stylesheet" type="text/css" href="css/style1.css">   
+</head>  
+<body>  
+    <div id="frm">  
+        <h1>Login</h1>  
+        <form name="f1" action="CRED.php" onsubmit="return validation()" method="POST">  
+            <p>  
+                <label> Name: </label>  
+                <input type="text" id="name" name="name" />  
+            </p>  
+            <p>  
+                <label> Phone number: </label>  
+                <input type="number" id="number" name="number" maxlength="10" />  
+            </p>  
+            <p>     
+                <input type="submit" id="btn-insert" name="action" value="Insert" />
+            </p>
+            <p>
+                <input type="submit" id="btn-update" name="action" value="Update" />
+            </p>
+            <p>
+                <input type="submit" id="btn-delete" name="action" value="Delete" /> 
+            </p> 
+            <p>     
+                <input type="submit" id="btn-show" name="action" value="Show" />
+            </p> 
+        </form>  
+    </div>  
+
+    <script>  
+        function validation() {  
+            var nameField = document.f1.name.value;  
+            var numberField = document.f1.number.value;  
+            if (nameField === "" && numberField === "") {  
+                alert("Both Name and Phone Number fields are empty!");  
+                return false;  
+            } else {  
+                if (nameField === "") {  
+                    alert("Name field is empty!");  
+                    return false;  
+                }   
+                if (numberField === "") {  
+                    alert("Phone Number field is empty!");  
+                    return false;  
+                }
+                if (numberField.length < 10) {
+                    alert("Phone Number should be at least 10 digits!");
+                    return false;
+                }
+            }                             
+        }  
+    </script>  
+</body>     
+</html>  
